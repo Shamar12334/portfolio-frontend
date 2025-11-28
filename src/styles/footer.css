@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-foot {
+  @apply w-full py-10 bg-black text-white flex flex-col items-center gap-6 border-t border-gray-800;
+}
+.nav-links-2 {
+  @apply flex gap-10 text-lg;
+} 
+.social-links {
+    @apply flex gap-6 text-base opacity-80;
+}
+.copy-text{
+    @apply text-sm text-gray-500 tracking-wide;
+}
+.nav-link{
+    @apply hover:text-gray-300 transition;
+}

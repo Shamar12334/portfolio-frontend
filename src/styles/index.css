@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body reset */
+body {
+    overflow-x: hidden; /* Prevent horizontal scroll only */
+    @apply text-white bg-black; /* Simple dark theme */
+}
+
+/* Universal section spacing class */
+.section {
+    @apply py-20 px-6 lg:px-28;
+}
