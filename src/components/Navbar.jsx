@@ -7,13 +7,11 @@ function Navbar() {
 
   return (
     <nav className="nav-container">
-      <div className="nav-top">
-        
-        {/* Logo */}
-        <h1 className="nav-logo">Shamar Weekes</h1>
 
-        {/* Desktop Links */}
-        <div className="nav-links">
+      <div className="nav-inner">
+
+        {/* LEFT SECTION – DESKTOP MENU */}
+        <div className="nav-left">
           <Link className="nav-link" to="/">Home</Link>
           <Link className="nav-link" to="/about">About</Link>
           <Link className="nav-link" to="/projects">Projects</Link>
@@ -21,16 +19,20 @@ function Navbar() {
           <Link className="nav-link" to="/contact">Contact</Link>
         </div>
 
-        {/* Hamburger Icon */}
+        {/* CENTER LOGO */}
+        <h1 className="nav-logo">Shamar Weekes</h1>
+
+        {/* RIGHT SECTION – HAMBURGER */}
         <div 
           className="nav-hamburger"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? "✕" : "☰"}
         </div>
+
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* MOBILE DROPDOWN MENU */}
       {isOpen && (
         <div className="nav-dropdown">
           <Link className="nav-link" to="/" onClick={() => setIsOpen(false)}>Home</Link>
@@ -40,6 +42,7 @@ function Navbar() {
           <Link className="nav-link" to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
         </div>
       )}
+
     </nav>
   );
 }

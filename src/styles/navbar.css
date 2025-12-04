@@ -1,74 +1,64 @@
-/* NAV CONTAINER */
 .nav-container {
   width: 100%;
   padding: 1.2rem 2rem;
   background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 50;
 }
 
-/* TOP ROW */
-.nav-top {
+/* Flex row for navbar items */
+.nav-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
-/* LOGO */
+/* Centered Logo */
 .nav-logo {
   color: white;
-  font-size: 1.4rem;
   font-weight: bold;
-  white-space: nowrap; /* prevents wrapping */
+  font-size: 1.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
-/* DESKTOP LINKS */
-.nav-links {
+/* Left desktop menu */
+.nav-left {
   display: flex;
   gap: 2rem;
 }
 
+/* Links */
 .nav-link {
   color: white;
-  font-size: 1.1rem;
   text-decoration: none;
+  font-size: 1.1rem;
 }
 
-/* HAMBURGER ICON (HIDDEN ON DESKTOP) */
+/* Hamburger (always right side) */
 .nav-hamburger {
-  display: none;
   font-size: 2rem;
   color: white;
   cursor: pointer;
 }
 
-/* MOBILE DROPDOWN */
+/* Mobile Dropdown */
 .nav-dropdown {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  margin-top: 1rem;
 }
 
-/* ------------ RESPONSIVE RULES ---------------- */
-
-/* MOBILE & TABLET MODE */
+/* Hide left menu on mobile */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none; /* Hide desktop menu */
-  }
-
-  .nav-hamburger {
-    display: block; /* Show hamburger */
-  }
-}
-
-/* Extra-small phones */
-@media (max-width: 480px) {
-  .nav-logo {
-    font-size: 1.2rem;
+  .nav-left {
+    display: none;
   }
 }
