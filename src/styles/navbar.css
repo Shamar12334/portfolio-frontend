@@ -1,7 +1,8 @@
+/* MAIN NAVBAR */
 .nav-container {
   width: 100%;
   padding: 1.2rem 2rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0,0,0,0.4);
   backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
@@ -9,29 +10,29 @@
   z-index: 50;
 }
 
-/* Flex row for navbar items */
-.nav-inner {
+/* ROW LAYOUT */
+.nav-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between; /* keeps logo left, hamburger right */
   position: relative;
 }
 
-/* Centered Logo */
+/* LOGO */
 .nav-logo {
   color: white;
+  font-size: 1.4rem;
   font-weight: bold;
-  font-size: 1.5rem;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   white-space: nowrap;
 }
 
-/* Left desktop menu */
-.nav-left {
+/* MENU LINKS - CENTERED GROUP */
+.nav-links {
   display: flex;
   gap: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* EXACT center */
 }
 
 /* Links */
@@ -41,24 +42,33 @@
   font-size: 1.1rem;
 }
 
-/* Hamburger (always right side) */
+/* Hamburger Button */
 .nav-hamburger {
+  display: none;
   font-size: 2rem;
   color: white;
   cursor: pointer;
 }
 
-/* Mobile Dropdown */
+/* Dropdown for mobile */
 .nav-dropdown {
-  margin-top: 1rem;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 1.2rem;
+  margin-top: 1rem;
 }
 
-/* Hide left menu on mobile */
+/* MOBILE BEHAVIOR */
 @media (max-width: 768px) {
-  .nav-left {
-    display: none;
+  .nav-links {
+    display: none; /* hide centered menu */
+  }
+
+  .nav-hamburger {
+    display: block; /* show hamburger */
+  }
+
+  .nav-dropdown {
+    display: flex;
   }
 }
