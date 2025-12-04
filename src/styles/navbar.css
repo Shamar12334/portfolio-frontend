@@ -1,33 +1,74 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* NAVBAR CONTAINER */
+/* NAV CONTAINER */
 .nav-container {
-  @apply px-6 py-4 bg-black text-white sticky top-5 z-50 border-b border-gray-800;
+  width: 100%;
+  padding: 1.2rem 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+/* TOP ROW */
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* LOGO */
 .nav-logo {
-  @apply text-xl font-bold tracking-wide;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  white-space: nowrap; /* prevents wrapping */
 }
 
-/* DESKTOP MENU (links row) */
+/* DESKTOP LINKS */
 .nav-links {
-  @apply hidden md:flex gap-40 text-lg absolute left-1/2 -translate-x-1/2;
-} 
-
-/* EACH LINK STYLE */
-.nav-link {
-  @apply hover:text-orange-300 transition duration-200 cursor-pointer;
+  display: flex;
+  gap: 2rem;
 }
 
-/* HAMBURGER (mobile toggle) */
+.nav-link {
+  color: white;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+/* HAMBURGER ICON (HIDDEN ON DESKTOP) */
 .nav-hamburger {
-  @apply md:hidden text-3xl cursor-pointer;
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
 }
 
 /* MOBILE DROPDOWN */
 .nav-dropdown {
-  @apply md:hidden flex flex-col gap-4 mt-4 bg-black px-6 py-4 border-t border-gray-800;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* ------------ RESPONSIVE RULES ---------------- */
+
+/* MOBILE & TABLET MODE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide desktop menu */
+  }
+
+  .nav-hamburger {
+    display: block; /* Show hamburger */
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 480px) {
+  .nav-logo {
+    font-size: 1.2rem;
+  }
 }

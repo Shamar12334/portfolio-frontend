@@ -7,9 +7,9 @@ function Navbar() {
 
   return (
     <nav className="nav-container">
-
-      {/* Top Row */}
-      <div className="flex justify-between items-center">
+      <div className="nav-top">
+        
+        {/* Logo */}
         <h1 className="nav-logo">Shamar Weekes</h1>
 
         {/* Desktop Links */}
@@ -21,12 +21,12 @@ function Navbar() {
           <Link className="nav-link" to="/contact">Contact</Link>
         </div>
 
-        {/* Mobile Hamburger */}
+        {/* Hamburger Icon */}
         <div 
           className="nav-hamburger"
           onClick={() => setIsOpen(!isOpen)}
         >
-          ☰
+          {isOpen ? "✕" : "☰"}
         </div>
       </div>
 
@@ -40,7 +40,6 @@ function Navbar() {
           <Link className="nav-link" to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
         </div>
       )}
-
     </nav>
   );
 }
